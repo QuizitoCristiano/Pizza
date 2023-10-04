@@ -73,7 +73,6 @@ export const Header = () => {
 
       <Stack 
       sx={{
-        // bgcolor: 'yellowgreen',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

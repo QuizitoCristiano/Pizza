@@ -2,14 +2,27 @@ import React, { useState } from 'react'
 import { Box, Button, Stack, Typography } from '@mui/material'
 import ClearIcon from '@mui/icons-material/Clear'
 import LocalMallIcon from '@mui/icons-material/LocalMall'
-import { PaidIngredients } from './index'
+import { PaidIngredients } from '.'
+
+import { keyframes } from '@emotion/react'
+
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: scaleX(- 50%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`
 
 export const PaymentIcon = () => {
   const [openForme, setOpenForme] = useState(false)
   const AbreForme = () => {
     setOpenForme(!openForme)
 
-    alert('beleza bor aí')
+   
   }
 
   return (
@@ -64,18 +77,13 @@ export const PaymentIcon = () => {
           }}
         >
           <Stack>
-            <Button
-              sx={{
-                color: 'white',
-                bgcolor: '  #FF6510 !important',
-                fontSize: '1.2rem',
-                fontWeight: '900',
-              }}
-
-              onClick={() => AbreForme()}
-            >
-              Fazer Bedido
-            </Button>
+         
+              <Box
+              >
+                <PaidIngredients />
+              </Box>
+          
+            
           </Stack>
         </Typography>
       </Box>
