@@ -1,65 +1,84 @@
-import React from "react"
-import { Box, Typography } from "@mui/material"
-import ClearIcon from '@mui/icons-material/Clear';
+import React, { useState } from 'react'
+import { Box, Button, Stack, Typography } from '@mui/material'
+import ClearIcon from '@mui/icons-material/Clear'
 import LocalMallIcon from '@mui/icons-material/LocalMall'
-import { PaidIngredients } from "./index";
-
+import { PaidIngredients } from './index'
 
 export const PaymentIcon = () => {
+  const [openForme, setOpenForme] = useState(false)
+  const AbreForme = () => {
+    setOpenForme(!openForme)
 
-    // const [openPaidIngredient, setOpenPaidIngredient] = useState(false)
-    // const TogglebreIngredientePago = () => {
-    //   setOpenPaidIngredient(!openPaidIngredient)
-    // }
+    alert('beleza bor aí')
+  }
 
-    return (
-        <>
-        <Box
+  return (
+    <>
+      <Box
+        sx={{
+          height: '100%',
+          bgcolor: 'grey',
+          alignContent: 'center',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          width: '100%',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gridGap: '10px',
+
+          '@media only screen and (max-width: 805px)': {
+            gridTemplateColumns: 'repeat(1, 1fr)',
+          },
+        }}
+      >
+        <LocalMallIcon sx={{ color: '#FF6510', fontSize: '3rem' }} />
+
+        <Typography
           sx={{
-            bgcolor: 'green',
-            width: '100%',
-            height: '100%',
-            // position: 'absolute',
-            zIndex: '553',
-            top:'50px',
-            laft: '0',
-            right: '0',
+            position: 'absolute',
+            top: '1.3rem',
+            // right: '1rem',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            borderRadius: '50%',
+            fontSize: '1.5rem',
+            bgcolor: 'black',
+            height: '18px',
+            width: '1.8rem',
           }}
-          
         >
-         
-            <LocalMallIcon 
-            sx={{ color: '#FF6510', 
-             fontSize: '3rem',
-            
+          3
+        </Typography>
 
-             }} 
-            />
+        <Typography
+          sx={{
+            display: 'flex',
 
-            
-            <Typography
-            sx={{
-              position: 'absolute',
-              top: '1.3rem',
-              // right: '1rem',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: '50%',
-              fontSize: '1.5rem',
-              bgcolor: 'black',
-              height: '18px',
-              width: '1.8rem',
-            }}
-          >
-            3
-          </Typography>
-        
-        </Box>
-    
-        </>
-    )
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '1.5rem',
+            bgcolor: 'black',
+            height: '5.9rem',
+            width: '100%',
+          }}
+        >
+          <Stack>
+            <Button
+              sx={{
+                color: 'white',
+                bgcolor: '  #FF6510 !important',
+                fontSize: '1.2rem',
+                fontWeight: '900',
+              }}
+
+              onClick={() => AbreForme()}
+            >
+              Fazer Bedido
+            </Button>
+          </Stack>
+        </Typography>
+      </Box>
+    </>
+  )
 }

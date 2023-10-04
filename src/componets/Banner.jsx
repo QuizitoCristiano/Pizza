@@ -1,8 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { Typography, Box, Stack } from '@mui/material'
 import PizzaBanner from '../img/pizza-banner.png'
+import QuatroEstacoes from '../img/quattro-stagioni.webp'
+import Margherita from '../img/capricciosa.webp'
 
 const Banner = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const images = [PizzaBanner, QuatroEstacoes, Margherita] // Lista de imagens
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
+    }, 3000)
+
+    return () => clearInterval(intervalId)
+  }, [images])
+
   return (
     <Stack
       sx={{
@@ -24,7 +37,7 @@ const Banner = () => {
     >
       <Stack
         sx={{
-        //   bgcolor: 'red',
+          //   bgcolor: 'red',
           gap: '2rem',
           height: 'auto',
           width: '100%',
@@ -79,7 +92,7 @@ const Banner = () => {
               textDecoration: 'none',
               listStyle: 'none',
               scrollBehavior: 'smooth',
-              
+
               '@media only screen and (max-width: 905px)': {
                 fontSize: '2rem',
                 fontWeight: '800',
@@ -91,37 +104,36 @@ const Banner = () => {
           </Typography>
         </Box>
 
-        <Box sx={{
+        <Box
+          sx={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             flexDirection: 'column',
-           position:'relative',
-           
-        }} 
-        className='myImgPizza'
+            position: 'relative',
+          }}
+          className="myImgPizza"
         >
           {/* <img src={PizzaBanner} alt="" /> */}
-          <Box className='styles_top '></Box>
-          <Box className='styles_left'></Box>
-
+          <Box className="styles_top "></Box>
+          <Box className="styles_left"></Box>
           <img
             id="minha-imagem"
             width={450}
             height={450}
-            src={PizzaBanner}
-            alt="Pizza"
-            sx={{
+            src={images[currentImageIndex]}
+            alt={`Image ${currentImageIndex + 1}`}
+            style={{
               '@media screen and (max-width: 805px)': {
                 width: '50px',
                 height: 'auto',
               },
             }}
           />
-          <Box className='styles_line '></Box>
-          <Box className='styles_right'></Box>
-        </Box>
 
+          <Box className="styles_line "></Box>
+          <Box className="styles_right"></Box>
+        </Box>
       </Stack>
     </Stack>
   )

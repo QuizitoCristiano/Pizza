@@ -350,9 +350,7 @@ export const CreatPizza = ({ data }) => {
                   fontSize: '12px',
                   fontWeight: '500',
                   padding: '1rem 2rem',
-                  Color: 'black',
-                  border: 'none',
-                  outline: 'none',
+                  color: 'white !important',
                   fontFamily: 'Roboto sans-serif',
                   fontFamily: 'Shrikhand cursive',
                   fontWeight: '900',
@@ -367,9 +365,6 @@ export const CreatPizza = ({ data }) => {
             
               >
               {openNewModa && (
-
-               
-
                 <NestedModal />
               )}
             

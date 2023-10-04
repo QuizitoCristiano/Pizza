@@ -153,7 +153,7 @@ export const Header = () => {
                color: 'red',
               backgroundColor: 'red',
               width: '450px',
-              height: '100vh',
+              height: '61vh',
               top: '8.5rem',
               left: '0px',  
               position: 'absolute',
@@ -162,11 +162,13 @@ export const Header = () => {
               transform: 'scaleX(0)',
               transition: 'opacity 0.5s ease, transform 0.5s ease',
               animation: `${fadeInAnimation} 0.5s forwards`,
+              overflowY: 'scroll',
 
               '@media only screen and (max-width: 700px)': {
+                overflowY: 'scroll',
                 display: 'flex',
                 color: 'red',
-                backgroundColor: 'red',
+                backgroundColor: 'blue',
                 width: '100%',
                 height: '100vh',
                 top: '8.5rem',
