@@ -13,35 +13,36 @@ import Cogumerlo from '../../img/mushrooms.png'
 import Olives from '../../img/olives.png'
 import Parmesao from '../../img/parmesan.png'
 import Folhas from '../../img/leaves.png'
+
 export const ingredientesMock = [
   {
     Image: AzonasBranco,
-    price: 28.99,
+    price: 11,
     name: ' Azeitonas Branco',
   },
   {
     Image: AzonasPreto,
-    price: 23.99,
+    price: 10,
     name: ' Azeitonas Preto',
   },
   {
     Image: cherry,
-    price: 14.19,
+    price: 11,
     name: ' Tomate',
   },
   {
     Image: Milho,
-    price: 14.99,
+    price: 8,
     name: ' Milho',
   },
   {
     Image: chilli_1,
-    price: 10.44,
+    price: 8,
     name: 'pimenta',
   },
   {
     Image: garlic,
-    price: 9.66,
+    price: 9,
     name: ' Alho',
   },
 
@@ -52,18 +53,18 @@ export const ingredientesMock = [
   },
   {
     Image: leaves,
-    price: 20,
+    price: 10,
     name: ' Queijo',
   },
 
   {
     Image: TomatesFrescos,
-    price: 12,
+    price: 5,
     name: ' Tomates Frescos',
   },
   {
     Image: Mussarela,
-    price: 10,
+    price: 6,
     name: ' Mussarela',
   },
   {
@@ -84,7 +85,7 @@ export const ingredientesMock = [
   },
   {
     Image: Folhas,
-    price: 20,
+    price: 13,
     name: ' Folhas',
   },
 ]

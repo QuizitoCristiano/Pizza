@@ -32,7 +32,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 86.76,
+    pizzaPrice: 19.99,
   },
   {
     Image: PizzaBa,
@@ -40,7 +40,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 56.76,
+    pizzaPrice: 29.76,
   },
   {
     Image: PizzaBanner,
@@ -48,7 +48,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 186.9,
+    pizzaPrice: 39.99,
   },
   {
     Image: PizzaBa,
@@ -65,7 +65,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 186.9,
+    pizzaPrice: 39.99,
   },
   {
     Image: PizzaBa,
@@ -73,7 +73,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 46.9,
+    pizzaPrice: 40.99,
   },
 
   {
@@ -82,7 +82,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 186.9,
+    pizzaPrice: 28.99,
   },
   {
     Image: PizzaBa,
@@ -99,7 +99,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 46.9,
+    pizzaPrice: 26.79,
   },
 
   {
@@ -108,7 +108,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 46.9,
+    pizzaPrice: 46.39,
   },
 
   {
@@ -117,7 +117,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 46.9,
+    pizzaPrice: 46.79,
   },
   {
     Image: Tonno,
@@ -125,7 +125,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 46.9,
+    pizzaPrice: 16.99,
   },
   {
     Image: pizzabanner,
@@ -133,7 +133,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 46.9,
+    pizzaPrice: 39.99,
   },
   {
     Image: Pepperoni,
@@ -141,7 +141,7 @@ const PizzaDeleils = [
     description: `Foi incrível conhecer um pouco mais da cultura chinesa e do
         drama asiático; fez-me refletir um pouco sobre
         os valores de culturas distintas`,
-    pizzaPrice: 46.9,
+    pizzaPrice: 32.99,
   },
 ]
 

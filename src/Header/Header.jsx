@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 import { PaidIngredients } from '../paidIngredients'
 import { PaymentIcon } from '../paidIngredients/PaymentIcon'
 
-import { keyframes } from '@emotion/react';
+import { keyframes } from '@emotion/react'
 
 const fadeInAnimation = keyframes`
   from {
@@ -24,7 +24,48 @@ const fadeInAnimation = keyframes`
     opacity: 1;
     transform: scale(1);
   }
-`;
+`
+
+// const myStylesCss = {
+//   color: 'red',
+//   backgroundColor: '#999',
+//   width: '450px',
+//   height: '61vh',
+//   top: '8.5rem',
+//   left: '0px',
+//   position: 'absolute',
+//   overflowY: 'scroll',
+//   display: 'flex',
+//   flexDirection: 'column',
+//   justifyContent: 'center',
+//   alignContent: 'center',
+//   color: 'red',
+//   opacity: 0,
+//   transformOrigin: 'left center',
+//   transform: 'scaleX(0)',
+//   transition: 'opacity 0.5s ease, transform 0.5s ease',
+//   animation: `${fadeInAnimation} 0.5s forwards`,
+//   padding: '1.5rem',
+//   overflowY: 'scroll',
+
+//   '@media only screen and (max-width: 700px)': {
+//     overflowY: 'scroll',
+//     display: 'flex',
+//     color: 'red',
+//     // backgroundColor: 'blue',
+//     width: '100%',
+//     height: '90vh',
+//     top: '8.5rem',
+//     bottom: '0px',
+//     position: 'absolute',
+//     opacity: 0,
+//     transformOrigin: 'bottom center',
+//     transform: 'scaleX(0)',
+//     transition: 'opacity 0.5s ease, transform 0.5s ease',
+//     animation: `${fadeInAnimation} 0.5s forwards`,
+//     padding: '1.5rem',
+//   },
+// }
 
 export const Header = () => {
   useEffect(() => {
@@ -71,14 +112,14 @@ export const Header = () => {
         </h2>
       </Box>
 
-      <Stack 
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '2.9rem',
-        flexDirection: 'row',
-      }}
+      <Stack
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '2.9rem',
+          flexDirection: 'row',
+        }}
       >
         <Box
           sx={{
@@ -119,7 +160,6 @@ export const Header = () => {
           sx={{
             display: 'flex',
 
-
             '@media only screen and (max-width: 700px)': {
               display: 'flex',
             },
@@ -144,56 +184,9 @@ export const Header = () => {
               )}
             </span>
           </Box>
-          {openPaidIngredient && (
-            <Box
-             
-
-            sx={{
-               color: 'red',
-              backgroundColor: 'red',
-              width: '450px',
-              height: '61vh',
-              top: '8.5rem',
-              left: '0px',  
-              position: 'absolute',
-              opacity: 0,
-              transformOrigin: 'left center',  
-              transform: 'scaleX(0)',
-              transition: 'opacity 0.5s ease, transform 0.5s ease',
-              animation: `${fadeInAnimation} 0.5s forwards`,
-              overflowY: 'scroll',
-
-              '@media only screen and (max-width: 700px)': {
-                overflowY: 'scroll',
-                display: 'flex',
-                color: 'red',
-                backgroundColor: 'blue',
-                width: '100%',
-                height: '100vh',
-                top: '8.5rem',
-                bottom: '0px',
-                position: 'absolute',
-                opacity: 0,
-                transformOrigin: 'bottom center',
-                transform: 'scaleX(0)',
-                transition: 'opacity 0.5s ease, transform 0.5s ease',
-                animation: `${fadeInAnimation} 0.5s forwards`,
-              },
-
-            }}  
-            >
-              <PaymentIcon />
-
-              <Box>
-               
-                <LocalMallIcon sx={{ color: '#FF6510', fontSize: '3rem' }} />
-               
-              </Box>
-            </Box>
-          )}
         </Stack>
       </Stack>
-
+      <PaymentIcon mandarParaSacola={openPaidIngredient} />
       <Stack
         sx={{
           display: 'none',

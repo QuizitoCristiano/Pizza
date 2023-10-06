@@ -30,89 +30,89 @@ const Drinks = [
   {
     Image: Antarctica2l,
     name: 'Garaná 2l',
-    price: 12.5,
+    price: 12,
   },
   {
     Image: AguaComgas,
     name: 'Água Com Gás',
-    price: 12.5,
+    price: 17,
   },
   {
     Image: AguaSemgas,
     name: 'Água Sem Gás',
-    price: 10.99,
+    price: 10,
   },
   {
     Image: FantaLaranja,
     name: 'Fanta Laranja',
-    price: 7.99,
+    price: 7,
   },
   {
     Image: FantaUva,
     name: 'Fanta Uva',
-    price: 7.99,
+    price: 7,
   },
   {
     Image: Pessego,
     name: 'Suco de Pessego',
-    price: 5.99,
+    price: 5,
   },
 
   {
     Image: AguaTonica,
     name: 'Água Tonica',
-    price: 10.5,
+    price: 10,
   },
   {
     Image: Tonica,
     name: 'Água Tonica',
-    price: 9.99,
+    price: 9,
   },
   {
     Image: GuaranaAntarctica,
     name: 'Guarana Antarctica',
-    price: 7.99,
+    price: 7,
   },
   {
     Image: refreDeMaca,
     name: 'Refri de Maçã',
-    price: 9.5,
+    price: 9,
   },
   {
     Image: Pepis,
     name: 'Pepis',
-    price: 9.99,
+    price: 9,
   },
   {
     Image: RefriPepis,
     name: 'Pepis',
-    price: 7.9,
+    price: 7,
   },
 
   {
     Image: Coca,
     name: 'Coca',
-    price: 6.99,
+    price: 6,
   },
   {
     Image: RefriAbacaxi,
     name: 'Refri de Abacaxi',
-    price: 8.99,
+    price: 8,
   },
   {
     Image: Refriuva,
     name: 'Refri de  Morango',
-    price: 10.99,
+    price: 10,
   },
   {
     Image: FantaUva,
     name: 'Fanta Uva',
-    price: 9.5,
+    price: 9,
   },
   {
     Image: Sprite,
     name: 'Sprite',
-    price: 10.99,
+    price: 10,
   },
 ]
 
