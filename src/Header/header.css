@@ -108,6 +108,7 @@ span {
 
 .styles_line {
   width: 1.5px;
+  
   height: 80px;
   background: linear-gradient(180deg, #f6410a, rgba(153, 109, 255, 0));
 }

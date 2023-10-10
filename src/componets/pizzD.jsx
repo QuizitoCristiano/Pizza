@@ -41,7 +41,6 @@ const sizes = [
 
 export const CreatPizza = ({ data }) => {
   const [soma, setSoma] = useState(0)
-  const [myNewCards, setMyNewCards] = useState(null)
   const [selectedSize, setSelectedSize] = useState('')
   const [abreMenuPizza, setAbreMenuPizza] = useState(false)
 
@@ -67,16 +66,50 @@ export const CreatPizza = ({ data }) => {
     
   })
 
+
+
+
   useEffect(() => {
     console.log(pedido)
   }, [pedido])
+
+
+
+
+  // useEffect(() => {
+  //   // Convertendo o objeto pedido para um formato compatível com o Firebase
+  //   const pedidoFirebase = {
+  //     pizza: {
+  //       nome: pedido.pizza.nome[0],
+  //       imagem: pedido.pizza.imagem[0],
+  //     },
+  //     ingredientes: pedido.ingredientes,
+  //     bebidas: pedido.bebidas,
+  //   };
+  
+  //   // Enviando para o Firebase
+  //   database.ref('pedidos').push(pedidoFirebase)
+  //     .then(() => {
+  //       console.log('Pedido enviado com sucesso para o Firebase!');
+  //     })
+  //     .catch((error) => {
+  //       console.error('Erro ao enviar pedido para o Firebase:', error);
+  //     });
+  // }, [pedido]);
+  
+
+
+
+
+  
+
 
   const [sacola, setSacola] = useState([])
 
   const adicionarItemNaSacola = () => {
     if (pedido.ingredientes.length > 0 || pedido.bebidas.length > 0) {
       setSacola([...sacola, pedido])
-      alert('Você conseguiu adicionar na sacola!')
+      // alert('Você conseguiu adicionar na sacola!')
     } else {
       alert('Você não conseguiu adicionar os itens. Tente novamente.')
     }
