@@ -54,17 +54,24 @@ const ChatComponent = () => {
           p: 4,
           borderRadius: '2.8rem',
           gap: '5rem',
-          overflowY: 'auto'
-        }
-
-
+          overflowY: 'auto',
+        },
       }}
     >
-
-<List sx={{
-        color: 'red'
-        
-      }}>
+      <List
+        sx={{
+          color: 'red',
+          // bgcolor: 'black',
+          width: '100',
+          display: 'flex',
+          justifyContent:'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          height: '40vh',
+          marginTop: '0.5rem',
+          overflowY: 'auto',
+        }}
+      >
         {messages.map((message, index) => (
           <ListItem key={index}>
             <ListItemText primary={message} />
@@ -79,9 +86,6 @@ const ChatComponent = () => {
         ))}
       </List>
 
-
-  
-
       <TextField
         label="Digite uma mensagem"
         variant="outlined"
@@ -89,21 +93,20 @@ const ChatComponent = () => {
         value={messageInput}
         onChange={(e) => setMessageInput(e.target.value)}
       />
-      <Button sx={{
-        bgcolor: '#ff6510 !important' ,
-        fontWeight: '800',
-        BorderBottom: '50rem'
-      }} variant="contained" color="primary" onClick={handleSendMessage}>
+      <Button
+        sx={{
+          bgcolor: '#ff6510 !important',
+          fontWeight: '800',
+          BorderBottom: '50rem',
+        }}
+        variant="contained"
+        color="primary"
+        onClick={handleSendMessage}
+      >
         Enviar
       </Button>
-     
-  
-  
-
     </Container>
   )
-
-
 }
 
 export default ChatComponent

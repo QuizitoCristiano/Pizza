@@ -14,6 +14,7 @@ import { PaidIngredients } from '../paidIngredients'
 import ChatComponent from '../componets/Cars'
 import { Chat } from '@mui/icons-material'
 import MiChat from '../componets/Chat'
+import ChatApp from '../componets/myChat/ChatApp'
 
 export const MyHome = () => {
   const [messages, setMessages] = useState([])
@@ -54,8 +55,7 @@ export const MyHome = () => {
         <Header />
         <Banner />
         <Pizza />
-        <ChatComponent/>
-        {/* <MiChat/> */}
+        <ChatApp/>
         <MyFooter />
       </Stack>
     </>
