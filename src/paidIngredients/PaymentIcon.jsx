@@ -3,7 +3,7 @@ import { Box, Button, Modal, Stack, Typography } from '@mui/material'
 import ClearIcon from '@mui/icons-material/Clear'
 import LocalMallIcon from '@mui/icons-material/LocalMall'
 import { PaidIngredients } from '.'
-
+import * as T from './styles/index.js'
 import { keyframes } from '@emotion/react'
 
 const fadeInAnimation = keyframes`
@@ -57,10 +57,7 @@ const myStylesCss = {
   },
 }
 
-
-
-
-const style = {
+const MyStyledContainer = {
   width: '65rem',
   height: '45rem',
   top: '-10%',
@@ -92,27 +89,24 @@ const style = {
   },
 }
 
-
-const styles = {
-  textField: {
-    bgcolor: 'white',
-    
-    '& .MuiInputBase-input': {
-      fontSize: '30px',
-      fontWeight: 'bold',
-    },
-  },
-};
+// const styles = {
+//   textField: {
+//     bgcolor: 'white',
+//     '& .MuiInputBase-input': {
+//       fontSize: '30px',
+//       fontWeight: 'bold',
+//     },
+//   },
+// }
 
 export const PaymentIcon = ({
   data,
   soma,
   setSoma,
-
   setMandarParaSacola,
   mandarParaSacola,
   pedido,
-  setPedido
+  setPedido,
 }) => {
   const [openForme, setOpenForme] = useState(false)
   const AbreForme = () => {
@@ -120,76 +114,30 @@ export const PaymentIcon = ({
   }
 
   const [valor, setValor] = useState(0)
+  const [newSoma, setNewSoma] = useState('')
+  console.log(soma)
 
-  const aumentarValor = () => {
-    setValor(valor + 1)
-  }
-
-  const diminuirValor = () => {
-    if (valor === 0) {
-      alert('Você tem que marcar os itens antes de diminuir.')
+  const addItem = (event) => {
+    if (event === 'decrease') {
+      if (valor === 0) {
+        alert('Você tem que marcar os itens antes de diminuir.')
+        return
+      }
+      setValor(valor - 1);
     } else {
-      setValor(valor - 1)
+      setValor(valor + 1);
+    }
+    if (valor) {
+      setNewSoma((soma + valor * data.pizzaPrice).toFixed(2))
     }
   }
 
-
-
-  const openModal = (img) => {
-    setAbreSacola(!abreSacola)
-    const valor = {
-      Image: img.Image,
-      userName: img.userName,
-      description: img.description,
-      pizzaPrice: img.pizzaPrice,
-      setSoma: soma,
-    }
-    setValorDosItens(valor)
-  }
   if (mandarParaSacola) {
     return (
-    
-      <Stack >
-        <Box
-          // sx={{
-          //   position: 'fixed',
-          //   left: 0,
-          //   top: '10rem',
-          //   height: '90%',
-          //   bgcolor: 'grey',
-          //   alignContent: 'center',
-          //   justifyContent: 'center',
-          //   flexDirection: 'column',
-          //   overflow: 'auto',
-          //   width: '50%',
-          //   display: 'grid',
-          //   gridTemplateColumns: 'repeat(1, 1fr)',
-          //   gridGap: '10px',
 
-          //   '@media only screen and (max-width: 805px)': {
-          //     gridTemplateColumns: 'repeat(1, 1fr)',
-          //   },
-          // }}
-          sx={style}
-        >
-          <Box
-            sx={{
-              width: '100%',
-              bgcolor: 'green',
-              padding: '1.5rem',
-            }}
-          >
-            <Box
-              sx={{
-                '@media only screen and (max-width: 805px)': {
-                  background: 'green',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textAlign: 'center',
-                },
-              }}
-            >
+        <Stack sx={MyStyledContainer}>
+          <T.GardMedia>
+            <T.GardMediaMain>
               <img
                 id="minha-imagem"
                 width={250}
@@ -197,76 +145,31 @@ export const PaymentIcon = ({
                 src={data?.Image}
                 alt="Pizza"
               />
-            </Box>
+            </T.GardMediaMain>
 
             <Box>
               <Box
                 sx={{
-                  
                   fontSize: '2rem',
                   fontWeight: '700',
                   color: 'red',
                 }}
               >
-                <Box sx={{gap: '2.5rem',}}>
-          
-
-                  <Stack sx={{
-                    bgrcolor: 'grey',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignContent: 'center',
-                    flexDirection: 'row',
-                    gap: '2rem'
-                  }}>
-
-                  <Button sx={{
-                    borderRadius: '4px',
-                    // bgcolor: '#f6410a',
-                    fontSize: '20px',
-                  
-                    height: '23px',
-                    width: '10px !important',
-                 
-                    color: '#fff',
-                    border: 'none',
-                    outline: 'none',
-                    fontFamily: 'Roboto sans-serif',
-                    fontFamily: 'Shrikhand cursive',
-                    fontWeight: '900',
-                
-                    backgroundColor: '#FF6510 !important',
-                  }} onClick={aumentarValor}>
-                    +
-                  </Button>
-                  <Button
-                  sx={{
-                    borderRadius: '4px',
-                    // bgcolor: '#f6410a',
-                    fontSize: '2rem',
-                  
-                    height: '23px',
-                    width: '10px !important',
-                 
-                    color: '#fff',
-                    border: 'none',
-                    outline: 'none',
-                    fontFamily: 'Roboto sans-serif',
-                    fontFamily: 'Shrikhand cursive',
-                    fontWeight: '900',
-                
-                    backgroundColor: 'black !important',
-                  }}
-                    onClick={diminuirValor}
-                  >
-                    -
-                  </Button>
-                  </Stack>
-
-                  <p>Valor atual: {valor}</p>
+                <Box sx={{ gap: '2.5rem' }}>
+                  <T.ButtonsWrapper>
+                    <T.MyBotton
+                      fundo="#FF6510 !important"
+                      onClick={() => addItem('add')}
+                    >
+                      +
+                    </T.MyBotton>
+                    <T.MyBotton onClick={() => addItem('decrease')}>
+                      -
+                    </T.MyBotton>
+                  </T.ButtonsWrapper>
+                  <p>Valor atual: {newSoma}</p>
                 </Box>
               </Box>
-
               <Box
                 sx={{
                   fontSize: '1.3rem',
@@ -275,32 +178,18 @@ export const PaymentIcon = ({
                 }}
               >
                 {data?.soma}
-   
               </Box>
             </Box>
-          </Box>
-          <Typography
-            sx={{
-              display: 'flex',
-
-              justifyContent: 'center',
-              alignItems: 'center',
-              fontSize: '1.5rem',
-              bgcolor: 'black',
-              height: '5.9rem',
-              width: '100%',
-            }}
-          >
+          </T.GardMedia>
+          <T.GridIngredients>
             <Stack>
               <Box>
                 <PaidIngredients />
               </Box>
-            </Stack>
-          </Typography>
-        </Box>
-      </Stack>
-
-  
+            </Stack> 
+          </T.GridIngredients>
+        </Stack>
+   
     )
   }
 }

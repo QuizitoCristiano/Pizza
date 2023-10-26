@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { MainLayout } from './layouts/mylayouts'
 import { MyHome } from './pages/home'
 import { PaymentIcon } from './paidIngredients/PaymentIcon'
+import Chat from './componets/Chat'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<MyHome />} />
       </Routes>
       <PaymentIcon/>
+   
     </BrowserRouter>
   )
 }

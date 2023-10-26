@@ -1,111 +1,109 @@
-import React, { useState } from 'react';
-import { Typography, Stack, Box, Button, Input } from '@mui/material';
-// Imports de imagens omitidos por brevidade
+import React, { useState } from 'react'
+import {
+  Container,
+  TextField,
+  Button,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  Stack,
+} from '@mui/material'
 
-const Items = [
-  // Itens omitidos para brevidade
-];
+import CloseIcon from '@mui/icons-material/Close'
+import { ButtonsWrapper } from '../paidIngredients/styles'
+import { BorderBottomRounded, Construction } from '@mui/icons-material'
 
-const MandatoryItems = ({ setPedido }) => {
-  const [selectedItems, setSelectedItems] = useState(
-    new Array(Items.length).fill(false)
-  );
-  const [totalPrice, setTotalPrice] = useState(0);
+const ChatComponent = () => {
+  const [messages, setMessages] = useState([])
+  const [messageInput, setMessageInput] = useState('')
 
-  const handleCheckboxChange = (index) => {
-    const updatedItems = [...selectedItems];
-    updatedItems[index] = !updatedItems[index];
-    setSelectedItems(updatedItems);
-  };
-
-  const calculateTotalPrice = () => {
-    let total = 0;
-    for (let i = 0; i < Items.length; i++) {
-      if (selectedItems[i]) {
-        total += (Items[i].percentage / 100) * Items[i].price;
-      }
+  const handleSendMessage = () => {
+    if (messageInput.trim() !== '') {
+      setMessages([...messages, messageInput])
+      setMessageInput('')
     }
-    setTotalPrice(total);
-  };
+  }
 
-  const handleOrder = () => {
-    if (selectedItems.every((item) => !item)) {
-      alert('Selecione pelo menos um item.');
-    } else {
-      alert('Pedido feito com sucesso!');
-    }
-  };
-
-  const addBebida = () => {
-  //Chama as funções necessárias e depois setPedido
-    handleOrder();
-    calculateTotalPrice();
-
-    // Agora você pode definirPedido com o preço total atualizado e itens selecionados
-    setPedido((prevPedido) => ({
-      ...prevPedido,
-      bebidas: [...prevPedido.bebidas, 'Nova Bebida'],
-      totalPrice: totalPrice,
-      selectedItems: selectedItems,
-    }));
-  };
+  const handleRemoveMessage = (index) => {
+    const updatedMessages = [...messages]
+    updatedMessages.splice(index, 1)
+    setMessages(updatedMessages)
+  }
 
   return (
-    <Stack
+    <Container
       sx={{
-        // Estilos omitidos por brevidade
+        bgcolor: '#dedede',
+        border: '2px solid black',
+        position: 'relative',
+        borderRadius: '1rem',
+        gap: '3rem',
+        width: '350px',
+        margin: '29px',
+        minHeight: '440px',
+
+        '@media only screen and (max-width: 705px)': {
+          width: '97%',
+          height: '93vh',
+          top: '-0%',
+          left: '1.5%',
+          bgcolor: '#dedede',
+          border: '2px solid #000',
+          boxShadow: 24,
+          p: 4,
+          borderRadius: '2.8rem',
+          gap: '5rem',
+          overflowY: 'auto'
+        }
+
+
       }}
     >
-      {Items.length > 0 &&
-        Items.map((drinks, index) => (
-          <Box key={index}>
-            <Box
-              sx={{
-                // Estilos omitidos por brevidade
-              }}
+
+<List sx={{
+        color: 'red'
+        
+      }}>
+        {messages.map((message, index) => (
+          <ListItem key={index}>
+            <ListItemText primary={message} />
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={() => handleRemoveMessage(index)}
             >
-              <img src={drinks?.Image} width={95} height={100} alt="" />
-              <Typography>{drinks?.userName}</Typography>
-              <input
-                type="checkbox"
-                checked={selectedItems[index]}
-                onChange={() => handleCheckboxChange(index)}
-              />
-            </Box>
-          </Box>
+              <CloseIcon />
+            </Button>
+          </ListItem>
         ))}
+      </List>
 
-      <Stack
-        sx={{
-          // Estilos omitidos por brevidade
-        }}
-      >
-        <Button
-          sx={{
-            // Estilos omitidos por brevidade
-          }}
-          onClick={calculateTotalPrice}
-        >
-          Calcular Preço Total
-        </Button>
-        <Typography
-          sx={{
-            // Estilos omitidos por brevidade
-          }}
-        >
-          Total: R$ {totalPrice.toFixed(2)}
-        </Typography>
-        <Button
-          sx={{
-            // Estilos omitidos por brevidade
-          }}
-          onClick={addBebida}
-        >
-          Fazer Pedido
-        </Button>
-      </Stack>
-    </Stack>
-  );
-};
 
-export default MandatoryItems;
+  
+
+      <TextField
+        label="Digite uma mensagem"
+        variant="outlined"
+        fullWidth
+        value={messageInput}
+        onChange={(e) => setMessageInput(e.target.value)}
+      />
+      <Button sx={{
+        bgcolor: '#ff6510 !important' ,
+        fontWeight: '800',
+        BorderBottom: '50rem'
+      }} variant="contained" color="primary" onClick={handleSendMessage}>
+        Enviar
+      </Button>
+     
+  
+  
+
+    </Container>
+  )
+
+
+}
+
+export default ChatComponent

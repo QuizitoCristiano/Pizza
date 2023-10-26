@@ -40,7 +40,7 @@ const sizes = [
 ]
 
 export const CreatPizza = ({ data }) => {
-  const [soma, setSoma] = useState(0)
+  const [soma, setSoma] = useState(0);
   const [selectedSize, setSelectedSize] = useState('')
   const [abreMenuPizza, setAbreMenuPizza] = useState(false)
 

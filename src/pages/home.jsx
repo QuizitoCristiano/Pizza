@@ -11,6 +11,9 @@ import { useEffect } from 'react'
 import { api_users } from '../api/back'
 import { PaymentIcon } from '../paidIngredients/PaymentIcon'
 import { PaidIngredients } from '../paidIngredients'
+import ChatComponent from '../componets/Cars'
+import { Chat } from '@mui/icons-material'
+import MiChat from '../componets/Chat'
 
 export const MyHome = () => {
   const [messages, setMessages] = useState([])
@@ -51,8 +54,8 @@ export const MyHome = () => {
         <Header />
         <Banner />
         <Pizza />
-      
-        
+        <ChatComponent/>
+        {/* <MiChat/> */}
         <MyFooter />
       </Stack>
     </>
