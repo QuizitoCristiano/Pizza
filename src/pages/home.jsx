@@ -55,7 +55,7 @@ export const MyHome = () => {
         <Header />
         <Banner />
         <Pizza />
-        <ChatApp/>
+        {/* <ChatApp/> */}
         <MyFooter />
       </Stack>
     </>
